@@ -7,32 +7,34 @@
     .layout {
         width: 100%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
         font-size: 2em;
+        grid-template-columns: var(--nav-width) 60% auto;
     }
 
     .song-info {
         background: blue;
-        flex-grow: 1;
+        width: var(--nav-width);
         min-width: var(--nav-min-width);
         max-width: var(--nav-max-width);
+        align-self: center;
+        justify-self: center;
     }
 
     .controls {
-        flex-grow: 1;
-        max-width: 1250px;
+        width: 77%;
+        justify-self: right;
+        align-self: center;
     }
 
     .volume {
         background: #15ff16;
-        justify-self: right;
+        align-self: center;
+        justify-self: center;
     }
 
     .scrubber {
         margin: 0 auto;
-        width: 90%;
         height: 20px;
     }
 </style>

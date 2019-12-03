@@ -6,8 +6,9 @@
 <style>
     :root {
         --footer-height: 90px;
-        --nav-min-width: 240px;
-        --nav-max-width: 280px;
+        --nav-min-width: 150px;
+        --nav-max-width: 350px;
+        --nav-width: 14vmax;
     }
 
     .layout {
@@ -16,8 +17,7 @@
     }
 
     .nav {
-        flex: 1;
-        flex-basis: auto;
+        width: var(--nav-width);
         max-width: var(--nav-max-width);
         min-width: var(--nav-min-width);
         margin-bottom: var(--footer-height);
@@ -35,7 +35,6 @@
         left: 0;
         right: 0;
         height: var(--footer-height);
-        padding: 0 30px;
         background: rgba(255, 1, 0, 0.6);
         backdrop-filter: blur(4px);
     }
@@ -45,7 +44,7 @@
     <div class="nav">
         <NavBar />
     </div>
-    <div class="content">d</div>
+    <div class="content"></div>
 </div>
 <div class="footer">
     <Footer />

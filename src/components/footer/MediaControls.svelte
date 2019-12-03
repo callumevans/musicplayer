@@ -20,10 +20,25 @@
     }
 </style>
 
+<script>
+    import { isSongPlaying } from "../../stores/now-playing-store";
+
+    function setIsPlaying(value) {
+        isSongPlaying.set(value);
+    }
+</script>
+
 <div class="layout">
     <div class="buttons">
+
         <i class="fas fa-step-backward small"></i>
-        <i class="far fa-play-circle"></i>
+
+        {#if $isSongPlaying}
+            <i class="far fa-pause-circle" on:click={() => setIsPlaying(false)}></i>
+        {:else}
+            <i class="far fa-play-circle" on:click={() => setIsPlaying(true)}></i>
+        {/if}
+
         <i class="fas fa-step-forward small"></i>
     </div>
 </div>

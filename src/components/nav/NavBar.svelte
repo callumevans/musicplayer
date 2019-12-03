@@ -13,5 +13,5 @@
 </style>
 
 <div class="layout">
-    <div class="now-playing-art">d</div>
+    <div class="now-playing-art"></div>
 </div>
