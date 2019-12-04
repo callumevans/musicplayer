@@ -14,7 +14,7 @@
     }
 
     .time {
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
 </style>
 

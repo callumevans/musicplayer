@@ -13,9 +13,10 @@
         align-items: center;
         width: 120px;
         padding-bottom: 3px;
+        font-size: 1.1em;
     }
 
-    .small {
+    .small-button {
         font-size: 0.6em;
     }
 </style>
@@ -31,7 +32,7 @@
 <div class="layout">
     <div class="buttons">
 
-        <i class="fas fa-step-backward small"></i>
+        <i class="fas fa-step-backward small-button"></i>
 
         {#if $isSongPlaying}
             <i class="far fa-pause-circle" on:click={() => setIsPlaying(false)}></i>
@@ -39,6 +40,6 @@
             <i class="far fa-play-circle" on:click={() => setIsPlaying(true)}></i>
         {/if}
 
-        <i class="fas fa-step-forward small"></i>
+        <i class="fas fa-step-forward small-button"></i>
     </div>
 </div>

@@ -6,37 +6,33 @@
 <style>
     :root {
         --footer-height: 90px;
-        --nav-min-width: 150px;
-        --nav-max-width: 350px;
-        --nav-width: 14vmax;
+        --nav-width: 230px;
     }
 
     .layout {
         height: 100%;
-        display: flex;
+        display: grid;
+        grid-template:
+            'nav content'
+            'footer footer';
+
+        grid-template-columns: var(--nav-width) auto;
+        grid-template-rows: calc(100% - var(--footer-height)) auto;
     }
 
     .nav {
-        width: var(--nav-width);
-        max-width: var(--nav-max-width);
-        min-width: var(--nav-min-width);
-        margin-bottom: var(--footer-height);
         background: #49bcff;
+        grid-area: nav;
     }
 
     .content {
-        flex: 1;
-        min-width: 370px;
+        grid-area: content;
     }
 
     .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: var(--footer-height);
         background: rgba(255, 1, 0, 0.6);
         backdrop-filter: blur(4px);
+        grid-area: footer;
     }
 </style>
 
@@ -44,8 +40,10 @@
     <div class="nav">
         <NavBar />
     </div>
-    <div class="content"></div>
-</div>
-<div class="footer">
-    <Footer />
+    <div class="content">
+
+    </div>
+    <div class="footer">
+        <Footer />
+    </div>
 </div>
