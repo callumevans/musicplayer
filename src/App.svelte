@@ -33,7 +33,6 @@
     }
 
     .footer {
-        background: rgba(255, 1, 0, 1);
         grid-area: footer;
     }
 </style>

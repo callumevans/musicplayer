@@ -1,3 +1,13 @@
+<script>
+    import { isSongPlaying } from "../../stores/now-playing-store";
+    import { setTheme, themes } from "../../stores/config-store";
+
+    function setIsPlaying(value) {
+        setTheme(themes.dark)
+        isSongPlaying.set(value);
+    }
+</script>
+
 <style>
     .layout {
         min-width: 200px;
@@ -20,14 +30,6 @@
         font-size: 0.6em;
     }
 </style>
-
-<script>
-    import { isSongPlaying } from "../../stores/now-playing-store";
-
-    function setIsPlaying(value) {
-        isSongPlaying.set(value);
-    }
-</script>
 
 <div class="layout">
     <div class="buttons">
