@@ -1,13 +1,13 @@
 {
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "emotion": "^10.0.23",
+    "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.5",
     "rimraf": "^3.0.0",
     "sass": "^1.23.7",
-    "svelte": "^3.16.0",
-    "tailwindcss": "^1.1.4",
-    "normalize.css": "^8.0.1",
-    "@fortawesome/fontawesome-free": "^5.11.2"
+    "svelte": "^3.16.0"
   },
   "browserslist": [
     "last 1 chrome versions"

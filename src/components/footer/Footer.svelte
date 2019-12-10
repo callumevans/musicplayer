@@ -1,6 +1,7 @@
 <script>
     import MediaControls from "./MediaControls.svelte";
     import Scrubber from "./Scrubber.svelte";
+    import { theme } from "../../stores/config-store";
 </script>
 
 <style>
@@ -37,7 +38,7 @@
 
 </style>
 
-<div class="layout">
+<div class="layout {$theme.footer}">
     <div class="song-info">
         Now Playing
     </div>
