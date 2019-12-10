@@ -32,7 +32,6 @@
 
 <div class="layout">
     <div class="buttons">
-
         <i class="fas fa-step-backward small-button"></i>
 
         {#if $isSongPlaying}

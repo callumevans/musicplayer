@@ -1,17 +1,20 @@
+<script>
+    import User from "./User.svelte";
+</script>
 <style>
     .layout {
         height: 100%;
-        display: flex;
+        display: grid;
+        grid-template-rows: 120px auto var(--album-art-size);
     }
 
     .now-playing-art {
-        padding-top: 100%;
-        width: 100%;
         background: palegoldenrod;
-        align-self: flex-end;
     }
 </style>
 
 <div class="layout">
+    <User/>
+    <div></div>
     <div class="now-playing-art"></div>
 </div>

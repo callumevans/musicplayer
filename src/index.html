@@ -6,8 +6,26 @@
     <title>Title</title>
     <link href="styles.scss" type="text/css" rel="stylesheet">
     <link href="../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <meta name="apple-music-developer-token" content="eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1MTDJSNzhQTk4ifQ.eyJpYXQiOjE1NzU5Mzg2OTgsImV4cCI6MTU5MTQ5MDY5OCwiaXNzIjoiSkw2WDZLS0FUUSJ9.E9YymtMP3X9iF7UpcCFwZd4IruBG87qSQ2oVq2WzGmUW9RhgYZ4kRdw6sFdgoacSI1knduvVjclDoknG0lgaLg">
+    <meta name="apple-music-app-name" content="MusicPlayer">
+    <meta name="apple-music-app-build" content="0.0.1">
+    <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
 </head>
 <body>
     <script src="index.js"></script>
+    <script>
+        document.addEventListener('musickitloaded', function() {
+            // MusicKit global is now defined
+            MusicKit.configure({
+                developerToken: 'eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1MTDJSNzhQTk4ifQ.eyJpYXQiOjE1NzU5Mzg2OTgsImV4cCI6MTU5MTQ5MDY5OCwiaXNzIjoiSkw2WDZLS0FUUSJ9.E9YymtMP3X9iF7UpcCFwZd4IruBG87qSQ2oVq2WzGmUW9RhgYZ4kRdw6sFdgoacSI1knduvVjclDoknG0lgaLg',
+                app: {
+                    name: 'My Cool Web App',
+                    build: '1978.4.1'
+                }
+            });
+
+            document.dispatchEvent(new CustomEvent('applemusicready'));
+        });
+    </script>
 </body>
 </html>
