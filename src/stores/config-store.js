@@ -9,7 +9,7 @@ export const themes = {
 };
 
 
-export const theme = readable(loadTheme(themes.light));
+export const theme = writable(loadTheme(themes.light));
 
 export function setTheme(themeToApply) {
     const loadedTheme = loadTheme(themeToApply);

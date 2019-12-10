@@ -1,3 +1,3 @@
 export const lightTheme = {
-    footerBackground: '#350dfc'
+    footerBackground: '#f9fbfc'
 };

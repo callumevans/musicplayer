@@ -1,9 +1,8 @@
 <script>
     import { isSongPlaying } from "../../stores/now-playing-store";
-    import { setTheme, themes } from "../../stores/config-store";
+    import { themes } from "../../stores/config-store";
 
     function setIsPlaying(value) {
-        setTheme(themes.dark)
         isSongPlaying.set(value);
     }
 </script>
