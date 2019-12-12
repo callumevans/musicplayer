@@ -15,7 +15,7 @@
         --footer-height: 90px;
         --nav-width: 230px;
         --album-art-size: 230px;
-        --album-thumb-grid-size: 200px;
+        --album-thumb-grid-size: 220px;
     }
 
     .layout {

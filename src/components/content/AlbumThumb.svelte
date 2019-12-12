@@ -1,20 +1,13 @@
 <script>
-    import { onMount } from "svelte";
-    import { parseArtworkUrl } from "../../lib/artwork"
+    import {onMount} from "svelte";
+    import {parseArtworkUrl} from "../../lib/artwork";
+    import ThumbControls from "./thumb-controls/ThumbControls.svelte";
 
     export let album;
 
     let hovering = false;
 
-    function enter() {
-        hovering = true;
-    }
-
-    function leave() {
-        hovering = false;
-    }
-
-    console.debug('AlbumThumb', album)
+    console.debug('AlbumThumb', album);
 </script>
 
 <style>
@@ -41,7 +34,9 @@
     >
 
     {#if hovering}
-        <div class="media-overlay"></div>
+        <div class="media-overlay">
+            <ThumbControls />
+        </div>
     {/if}
 
 </div>
