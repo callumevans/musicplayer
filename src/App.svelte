@@ -1,12 +1,12 @@
 <script>
     import Footer from "./components/footer/Footer.svelte";
     import NavBar from "./components/nav/NavBar.svelte";
+    import ContentArea from "./components/content/ContentArea.svelte";
+
+    let isLoaded = false;
 
     document.addEventListener('applemusicready', () => {
-        const music = MusicKit.getInstance();
-        const res = music.api.library.albums().then((albums) => {
-            console.log(albums)
-        })
+        isLoaded = true;
     });
 </script>
 
@@ -15,6 +15,7 @@
         --footer-height: 90px;
         --nav-width: 230px;
         --album-art-size: 230px;
+        --album-thumb-grid-size: 200px;
     }
 
     .layout {
@@ -38,6 +39,7 @@
         overflow-y: scroll;
         background: pink;
         display: block;
+        overflow-x: hidden;
     }
 
     .footer {
@@ -45,16 +47,18 @@
     }
 </style>
 
+{#if !isLoaded}
+<div>LOADING...</div>
+{:else}
 <div class="layout">
     <div class="nav">
         <NavBar />
     </div>
     <div class="content">
-        <button data-apple-music-add-to-library="pl.da219c87667b4018968b94c4be8bc793"></button>
-        <button data-apple-music-add-to-library="1025210938"></button>
-        <button data-apple-music-add-to-library="1107054256" data-apple-music-type="songs"></button>
+        <ContentArea />
     </div>
     <div class="footer">
         <Footer />
     </div>
 </div>
+{/if}
