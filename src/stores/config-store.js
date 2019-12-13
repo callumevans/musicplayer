@@ -8,7 +8,6 @@ export const themes = {
     dark: 'DARK',
 };
 
-
 export const theme = writable(loadTheme(themes.light));
 
 export function setTheme(themeToApply) {
