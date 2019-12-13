@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import AlbumThumb from "./AlbumThumb.svelte";
+    import PlayableThumb from "./PlayableThumb.svelte";
+    import MediaObject from "../../media-object";
 
     let albums = [];
 
@@ -23,6 +24,6 @@
 
 <div class="layout">
     {#each albums as album}
-        <AlbumThumb album="{album}" />
+        <PlayableThumb mediaObject="{new MediaObject(album)}" />
     {/each}
 </div>

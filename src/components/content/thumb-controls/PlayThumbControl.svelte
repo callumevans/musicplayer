@@ -1,3 +1,26 @@
+<script>
+    import { pause, start, playMedia } from "../../../media-manager";
+    import { isPlaying, currentMedia } from "../../../stores/now-playing-store";
+
+    export let mediaObject;
+
+    async function playTrack() {
+        await playMedia(mediaObject);
+    }
+
+    async function handleClick() {
+        if ($currentMedia && $currentMedia.id === mediaObject.id) {
+            if ($isPlaying) {
+                pause();
+            } else {
+                await start();
+            }
+        } else {
+            await playTrack();
+        }
+    }
+</script>
+
 <style>
     .circle {
         width: 50px;
@@ -12,7 +35,7 @@
         color: white;
     }
 
-    .circle i {
+    .circle .offset {
         margin-right: -4px;
     }
 
@@ -23,6 +46,10 @@
     }
 </style>
 
-<span class="circle">
-    <i class="fas fa-play"></i>
+<span class="circle" on:click={handleClick}>
+    {#if $isPlaying && $currentMedia && $currentMedia.id === mediaObject.id}
+        <i class="fas fa-pause"></i>
+    {:else}
+        <i class="fas fa-play offset"></i>
+    {/if}
 </span>

@@ -2,6 +2,8 @@
     import PlayThumbControl from "./PlayThumbControl.svelte";
     import LoveThumbControl from "./LoveThumbControl.svelte";
     import EllipsisThumbControl from "./EllipsisThumbControl.svelte";
+
+    export let mediaObject;
 </script>
 <style>
     .layout {
@@ -17,6 +19,6 @@
 
 <div class="layout">
     <LoveThumbControl />
-    <PlayThumbControl />
+    <PlayThumbControl mediaObject="{mediaObject}" />
     <EllipsisThumbControl />
 </div>

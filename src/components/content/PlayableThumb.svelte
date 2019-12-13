@@ -1,13 +1,7 @@
 <script>
-    import {onMount} from "svelte";
-    import {parseArtworkUrl} from "../../lib/artwork";
     import ThumbControls from "./thumb-controls/ThumbControls.svelte";
-
-    export let album;
-
+    export let mediaObject;
     let hovering = false;
-
-    console.debug('AlbumThumb', album);
 </script>
 
 <style>
@@ -26,7 +20,7 @@
 
 <div class="thumb"
      style="
-        background: url({parseArtworkUrl(album.attributes.artwork.url)});
+        background: url({mediaObject.artwork});
         background-size: cover;
         background-repeat: no-repeat;"
      on:mouseenter={() => hovering = true}
@@ -35,7 +29,7 @@
 
     {#if hovering}
         <div class="media-overlay">
-            <ThumbControls />
+            <ThumbControls mediaObject="{mediaObject}" />
         </div>
     {/if}
 

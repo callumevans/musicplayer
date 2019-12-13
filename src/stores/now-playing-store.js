@@ -1,3 +1,4 @@
 import { writable } from "svelte/store";
 
-export const isSongPlaying = writable(true);
+export const currentMedia = writable(null);
+export const isPlaying = writable(false);
