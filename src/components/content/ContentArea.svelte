@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import PlayableThumb from "./PlayableThumb.svelte";
-    import MediaObject from "../../media-object";
+    import MediaObjectType from "../../media-object-type";
+    import parseArtworkUrl from "../../url-parser";
 
     let albums = [];
 
@@ -24,6 +25,11 @@
 
 <div class="layout">
     {#each albums as album}
-        <PlayableThumb mediaObject="{new MediaObject(album)}" />
+        <PlayableThumb
+                mediaType="{MediaObjectType.Album}"
+                mediaItemId="{album.id}"
+                mediaArtwork="{parseArtworkUrl(album.attributes.artwork.url)}"
+                identifier="{`${album.attributes.artistName} - ${album.attributes.name}`}"
+        />
     {/each}
 </div>

@@ -3,7 +3,8 @@
     import LoveThumbControl from "./LoveThumbControl.svelte";
     import EllipsisThumbControl from "./EllipsisThumbControl.svelte";
 
-    export let mediaObject;
+    export let playCallback;
+    export let isPlaying;
 </script>
 <style>
     .layout {
@@ -19,6 +20,6 @@
 
 <div class="layout">
     <LoveThumbControl />
-    <PlayThumbControl mediaObject="{mediaObject}" />
+    <PlayThumbControl isPlaying="{isPlaying}" on:click={playCallback} />
     <EllipsisThumbControl />
 </div>

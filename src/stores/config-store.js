@@ -1,4 +1,4 @@
-import {readable, writable} from "svelte/store"
+import { readable, writable } from "svelte/store"
 import { lightTheme } from "../themes/light"
 import { darkTheme } from "../themes/dark"
 import { css } from "emotion"
