@@ -70,6 +70,7 @@ function mediaItemDidChangeHandler(event) {
                 build: '0.0.1'
             },
             bitrate: MusicKit.PlaybackBitrate.HIGH,
+            suppressErrorDialog: true,
         });
 
         music = MusicKit.getInstance();

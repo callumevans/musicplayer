@@ -48,17 +48,17 @@
 </style>
 
 {#if !isLoaded}
-<div>LOADING...</div>
+    <div>LOADING...</div>
 {:else}
-<div class="layout">
-    <div class="nav">
-        <NavBar />
+    <div class="layout">
+        <div class="nav">
+            <NavBar />
+        </div>
+        <div class="content">
+            <ContentArea />
+        </div>
+        <div class="footer">
+            <Footer />
+        </div>
     </div>
-    <div class="content">
-        <ContentArea />
-    </div>
-    <div class="footer">
-        <Footer />
-    </div>
-</div>
 {/if}

@@ -1,3 +1,7 @@
+<script>
+    import { currentPlaybackTime, remainingPlaybackTime } from "../../stores/now-playing-store";
+</script>
+
 <style>
     .layout {
         display: flex;
@@ -20,7 +24,9 @@
 </style>
 
 <div class="layout">
-    <div class="time">00:00</div>
+    <div class="time">{$currentPlaybackTime}</div>
+    <div class="time">{$remainingPlaybackTime}</div>
+    <div class="time">{$currentPlaybackTime}</div>
     <div class="progress-bar"></div>
     <div class="time">5:45</div>
 </div>

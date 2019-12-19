@@ -20,6 +20,6 @@
 
 <div class="layout">
     <LoveThumbControl />
-    <PlayThumbControl isPlaying="{isPlaying}" on:click={playCallback} />
+    <PlayThumbControl isPlaying="{isPlaying}" playCallback="{playCallback}" />
     <EllipsisThumbControl />
 </div>
