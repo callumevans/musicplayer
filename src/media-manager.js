@@ -47,13 +47,16 @@ async function playAlbum(itemId) {
     await start();
 }
 
+export async function setPlaybackPosition(time) {
+    await MusicKit.getInstance().player.seekToTime(time);
+}
+
 function setIsPlaying(value) {
     isPlaying.set(value);
     playing = value;
 }
 
 function mediaItemDidChangeHandler(event) {
-    console.debug('mediaItemDidChange', event);
     currentMediaIdentifier.set(event.item.albumInfo);
     currentItemId.set(event.item.id);
     currentArtwork.set(event.item.artworkURL);

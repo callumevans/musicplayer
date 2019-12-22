@@ -48,7 +48,6 @@
         top: calc(var(--footer-height) * -1);
         float: right;
     }
-
 </style>
 
 <div class="layout {$theme.footer}">

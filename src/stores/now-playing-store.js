@@ -1,4 +1,4 @@
-import {readable, writable} from "svelte/store";
+import { readable, writable, derived } from "svelte/store";
 
 export const currentItemId = writable(null);
 export const isPlaying = writable(false);
@@ -8,10 +8,16 @@ export const currentArtist = writable(null);
 export const currentSong = writable(null);
 export const currentMediaIdentifier = writable(null);
 
+const REFRESH_RATE = 500;
+
 export const currentPlaybackTime = readable(0, (set) => {
     const interval = setInterval(() => {
         set(MusicKit.getInstance().player.currentPlaybackTime);
-    }, 1000);
+    }, REFRESH_RATE);
+
+    document.addEventListener('playbackProgressDidChange', (evt) => {
+        set(MusicKit.getInstance().player.currentPlaybackTime);
+    });
 
     return function stop() {
         clearInterval(interval);
@@ -20,8 +26,9 @@ export const currentPlaybackTime = readable(0, (set) => {
 
 export const currentPlaybackProgress = readable(0, (set) => {
     const interval = setInterval(() => {
-        console.log(MusicKit.getInstance().player.currentPlaybackProgress * 100);
-    }, 1000);
+        const calc = (MusicKit.getInstance().player.currentPlaybackTime / MusicKit.getInstance().player.currentPlaybackDuration) * 100;
+        set(calc || 0);
+    }, REFRESH_RATE);
 
     return function stop() {
         clearInterval(interval);
@@ -30,8 +37,8 @@ export const currentPlaybackProgress = readable(0, (set) => {
 
 export const currentPlaybackDuration = readable(0, (set) => {
     const interval = setInterval(() => {
-        console.log(MusicKit.getInstance().player.nowPlayingItem.duration);
-    }, 1000);
+        set(MusicKit.getInstance().player.currentPlaybackDuration || 0);
+    }, REFRESH_RATE);
 
     return function stop() {
         clearInterval(interval);
