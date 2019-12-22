@@ -6,7 +6,7 @@
     .layout {
         height: 100%;
         display: grid;
-        grid-template-rows: 120px auto var(--album-art-size);
+        grid-template-rows: 120px auto var(--nav-width);
     }
 </style>
 

@@ -1,5 +1,13 @@
 <script>
     export let isPlaying;
+    export let playCallback;
+
+    let isCurrentlyPlaying = isPlaying();
+
+    async function handle() {
+        await playCallback();
+        isCurrentlyPlaying = isPlaying();
+    }
 </script>
 
 <style>
@@ -27,8 +35,8 @@
     }
 </style>
 
-<span class="circle" on:click>
-    {#if isPlaying()}
+<span class="circle" on:click={handle}>
+    {#if isCurrentlyPlaying}
         <i class="fas fa-pause"></i>
     {:else}
         <i class="fas fa-play offset"></i>

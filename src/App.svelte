@@ -13,8 +13,7 @@
 <style>
     :root {
         --footer-height: 90px;
-        --nav-width: 230px;
-        --album-art-size: 230px;
+        --nav-width: 280px;
         --album-thumb-grid-size: 220px;
     }
 
@@ -48,17 +47,17 @@
 </style>
 
 {#if !isLoaded}
-<div>LOADING...</div>
+    <div>LOADING...</div>
 {:else}
-<div class="layout">
-    <div class="nav">
-        <NavBar />
+    <div class="layout">
+        <div class="nav">
+            <NavBar />
+        </div>
+        <div class="content">
+            <ContentArea />
+        </div>
+        <div class="footer">
+            <Footer />
+        </div>
     </div>
-    <div class="content">
-        <ContentArea />
-    </div>
-    <div class="footer">
-        <Footer />
-    </div>
-</div>
 {/if}
