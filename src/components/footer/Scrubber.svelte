@@ -5,6 +5,25 @@
     let isDragging = false;
     let dragValue = 0;
 
+    function secondsToMinutes(time) {
+        if (!time) {
+            return '00:00';
+        }
+
+        let minutes = Math.floor(time / 60);
+        let seconds = time - minutes * 60;
+
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+        }
+
+        return `${minutes}:${seconds}`;
+    }
+
     async function handleScrubChange(newTime) {
         await setPlaybackPosition(newTime)
     }
@@ -35,6 +54,7 @@
         background: #d3d3d3;
         height: 6px;
         border-radius: 5px;
+        cursor: pointer;
     }
 
     .scrubber-progress {
@@ -74,7 +94,7 @@
 </style>
 
 <div class="layout">
-    <div class="time">{$currentPlaybackTime}</div>
+    <div class="time">{secondsToMinutes($currentPlaybackTime)}</div>
 
     <div class="scrubber-container">
         <span class="scrubber-progress" style="{'width:' + $currentPlaybackProgress + '%'}" />
@@ -87,5 +107,5 @@
                 max="{$currentPlaybackDuration}"
                 value="{!isDragging ? $currentPlaybackTime : dragValue}" />
     </div>
-    <div class="time">{$currentPlaybackDuration}</div>
+    <div class="time">{secondsToMinutes($currentPlaybackDuration)}</div>
 </div>
