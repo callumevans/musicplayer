@@ -2,13 +2,14 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "emotion": "^10.0.23",
+    "musickit-typescript": "^1.2.4",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-pwa-manifest": "^2.8.2",
     "parcel-plugin-svelte": "^4.0.5",
     "rimraf": "^3.0.0",
     "sass": "^1.23.7",
-    "svelte": "^3.16.0",
-    "musickit-typescript": "^1.2.4"
+    "svelte": "^3.16.0"
   },
   "browserslist": [
     "last 1 chrome versions"
@@ -17,5 +18,18 @@
     "dev": "parcel src/index.html",
     "build": "npm run clean && parcel build src/index.html",
     "clean": "rimraf dist"
+  },
+  "pwaManifest": {
+    "name": "Muh PWA",
+    "shortName": "MPWA",
+    "startURL": "./",
+    "theme": "#aabbcc",
+    "generateIconOptions": {
+      "baseIcon": "./favicon.png",
+      "sizes": [
+        192
+      ],
+      "genFavicons": true
+    }
   }
 }
