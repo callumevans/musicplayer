@@ -12,9 +12,9 @@
 
 <style>
     :root {
-        --footer-height: 90px;
-        --nav-width: 280px;
-        --album-thumb-grid-size: 220px;
+        --footer-height: 2.5cm;
+        --nav-width: 6cm;
+        --album-thumb-grid-size: 5.2cm;
     }
 
     .layout {
