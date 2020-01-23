@@ -34,6 +34,10 @@ export async function start() {
     setIsPlaying(true);
 }
 
+export function setVolume(volume) {
+    music.player.volume = volume;
+}
+
 export async function playMedia(itemId, type) {
     switch (type) {
         case MediaObjectType.Album:

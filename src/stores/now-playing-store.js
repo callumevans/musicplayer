@@ -10,12 +10,13 @@ export const currentMediaIdentifier = writable(null);
 
 const REFRESH_RATE = 500;
 
+
 export const currentPlaybackTime = readable(0, (set) => {
     const interval = setInterval(() => {
         set(MusicKit.getInstance().player.currentPlaybackTime);
     }, REFRESH_RATE);
 
-    document.addEventListener('playbackProgressDidChange', (evt) => {
+    MusicKit.getInstance().addEventListener('playbackProgressDidChange', () => {
         set(MusicKit.getInstance().player.currentPlaybackTime);
     });
 
@@ -42,5 +43,14 @@ export const currentPlaybackDuration = readable(0, (set) => {
 
     return function stop() {
         clearInterval(interval);
+    };
+});
+
+export const currentVolume = readable(1, (set) => {
+    MusicKit.getInstance().addEventListener('playbackVolumeDidChange', () => {
+        set(MusicKit.getInstance().player.volume || 1);
+    });
+
+    return function stop() {
     };
 });

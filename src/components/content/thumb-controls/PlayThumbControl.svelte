@@ -17,11 +17,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.6);
         border-radius: 50%;
         border: 1px solid white;
         font-size: 1.3em;
         color: white;
+        backdrop-filter: blur(3px);
     }
 
     .circle .offset {

@@ -1,8 +1,9 @@
 <script>
     import MediaControls from "./MediaControls.svelte";
-    import Scrubber from "./Scrubber.svelte";
+    import Scrubber from "./PlaybackProgress.svelte";
     import {theme} from "../../stores/config-store";
     import SongInfo from "./SongInfo.svelte";
+    import Volume from "./Volume.svelte";
 </script>
 
 <style>
@@ -32,12 +33,6 @@
         height: 20px;
     }
 
-    .volume {
-        background: #15ff16;
-        align-self: center;
-        height: 100%;
-    }
-
     .fade {
         background: linear-gradient(270deg, #f8fafb, rgba(249, 251, 252, 0));
         display: block;
@@ -61,7 +56,7 @@
             <Scrubber />
         </div>
     </div>
-    <div class="volume">
-        0% -----> 100%
+    <div>
+        <Volume />
     </div>
 </div>
