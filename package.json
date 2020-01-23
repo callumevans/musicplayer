@@ -9,7 +9,8 @@
     "parcel-plugin-svelte": "^4.0.5",
     "rimraf": "^3.0.0",
     "sass": "^1.23.7",
-    "svelte": "^3.16.0"
+    "svelte": "^3.16.0",
+    "hex-to-rgba": "^2.0.1"
   },
   "browserslist": [
     "last 1 chrome versions"

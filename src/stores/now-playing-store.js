@@ -10,7 +10,6 @@ export const currentMediaIdentifier = writable(null);
 
 const REFRESH_RATE = 500;
 
-
 export const currentPlaybackTime = readable(0, (set) => {
     const interval = setInterval(() => {
         set(MusicKit.getInstance().player.currentPlaybackTime);

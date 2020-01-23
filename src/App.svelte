@@ -2,6 +2,7 @@
     import Footer from "./components/footer/Footer.svelte";
     import NavBar from "./components/nav/NavBar.svelte";
     import ContentArea from "./components/content/ContentArea.svelte";
+    import { theme } from "./stores/config-store";
 
     let isLoaded = false;
 
@@ -15,6 +16,8 @@
         --footer-height: 2.5cm;
         --nav-width: 6cm;
         --album-thumb-grid-size: 5.2cm;
+
+        font-family: 'Arial', sans-serif;
     }
 
     .layout {
@@ -29,14 +32,12 @@
     }
 
     .nav {
-        background: #49bcff;
         grid-area: nav;
     }
 
     .content {
         grid-area: content;
         overflow-y: scroll;
-        background: pink;
         display: block;
         overflow-x: hidden;
     }
@@ -50,10 +51,10 @@
     <div>LOADING...</div>
 {:else}
     <div class="layout">
-        <div class="nav">
+        <div class="nav {$theme.nav}">
             <NavBar />
         </div>
-        <div class="content">
+        <div class="content {$theme.content}">
             <ContentArea />
         </div>
         <div class="footer">
