@@ -1,7 +1,7 @@
 <script>
     import MediaControls from "./MediaControls.svelte";
     import Scrubber from "./PlaybackProgress.svelte";
-    import {theme} from "../../stores/config-store";
+    import { theme } from "../../stores/config-store";
     import SongInfo from "./SongInfo.svelte";
     import Volume from "./Volume.svelte";
 </script>
@@ -34,7 +34,6 @@
     }
 
     .fade {
-        background: linear-gradient(270deg, #f8fafb, rgba(249, 251, 252, 0));
         display: block;
         width: 60px;
         height: 100%;
@@ -48,7 +47,7 @@
 <div class="layout {$theme.footer}">
     <div class="song-info">
         <SongInfo />
-        <div class="fade" />
+        <div class="fade {$theme.fade}" />
     </div>
     <div class="controls">
         <MediaControls />

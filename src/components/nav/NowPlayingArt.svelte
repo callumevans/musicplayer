@@ -4,7 +4,6 @@
 
 <style>
     .fallback {
-        background: gray;
     }
 
     .art {
