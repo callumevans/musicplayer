@@ -16,6 +16,8 @@
         --footer-height: 2.5cm;
         --nav-width: 6cm;
         --album-thumb-grid-size: 5.2cm;
+
+        font-family: 'Arial', sans-serif;
     }
 
     .layout {

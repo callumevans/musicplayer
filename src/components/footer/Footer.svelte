@@ -19,6 +19,8 @@
         width: 100%;
         align-self: center;
         overflow: hidden;
+        font-size: 0.7em;
+        line-height: 2em;
     }
 
     .controls {
