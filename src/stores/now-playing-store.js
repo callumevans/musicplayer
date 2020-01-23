@@ -48,7 +48,7 @@ export const currentPlaybackDuration = readable(0, (set) => {
 
 export const currentVolume = readable(1, (set) => {
     MusicKit.getInstance().addEventListener('playbackVolumeDidChange', () => {
-        set(MusicKit.getInstance().player.volume || 1);
+        set(MusicKit.getInstance().player.volume);
     });
 
     return function stop() {
